@@ -1,16 +1,9 @@
 import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faQuran } from "@fortawesome/free-solid-svg-icons";
-export const Nav = ({ libraryStatus, setLibraryStatus }) => (
+export const Nav = () => (
     <View style={styles.nav}>
         <Text style={styles.logo}>Quranic Waves</Text>
-        <TouchableOpacity
-            style={styles.button}
-            onPress={() => setLibraryStatus(!libraryStatus)}
-        >
-            <Text style={styles.button.text}>Library</Text>
-            <FontAwesomeIcon icon={faQuran} />
-        </TouchableOpacity>
     </View>
 );
 
@@ -24,6 +17,7 @@ const styles = StyleSheet.create({
         marginBottom: "1rem",
         // backgroundColor: "red",
         width: "100%",
+        // backgroundColor: "#000",
     },
     logo: {
         color: "white",
@@ -31,18 +25,5 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         marginLeft: 20,
         paddingVertical: 20,
-    },
-    button: {
-        backgroundColor: "white",
-        padding: 15,
-        borderRadius: 5,
-        marginRight: 20,
-        flexDirection: "row",
-        alignItems: "center",
-        gap: 10,
-        text: {
-            color: "black",
-            fontSize: 15,
-        },
     },
 });
