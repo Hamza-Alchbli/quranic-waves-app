@@ -1,17 +1,23 @@
 import React from "react";
 import { Text, View, ScrollView, StyleSheet } from "react-native";
-import LibrarySurah from "../components/ui/LibrarySurah";
 
-function Library({surahs}) {
+import LibrarySurah from "../components/ui/LibrarySurah";
+import { useSurahs } from "../hooks/useSurahs";
+
+function Library() {
+    const { surahs } = useSurahs();
+
     return (
         <View style={styles.container}>
             <View style={styles.parent}>
                 <ScrollView style={styles.library}>
-                    {surahs.map((surah,index) => {
-                        return (
-                            <LibrarySurah key={index} surah={surah} />
-                        )
-                    })}
+                    {surahs ? (
+                        surahs.map((surah, index) => {
+                            return <LibrarySurah key={index} surah={surah} />;
+                        })
+                    ) : (
+                        <Text>Loading...</Text>
+                    )}
                 </ScrollView>
             </View>
         </View>

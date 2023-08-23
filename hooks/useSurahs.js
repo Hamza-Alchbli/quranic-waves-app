@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useAudioContext } from "../context/AudioContext"; // Import the useAudioContext hook
 
-export const useSurahs = ({ reciter, currentIndex, setLoading,setError }) => {
+export const useSurahs = () => {
+    const { reciter, currentIndex, setLoading, setError } = useAudioContext(); // Access the context values
+
     const [surahs, setSurahs] = useState(null);
     const [lang, setLang] = useState("en");
-
     const [currentSurah, setCurrentSurah] = useState();
     const [currentSurahAudio, setCurrentSurahAudio] = useState(1);
 
@@ -17,9 +19,8 @@ export const useSurahs = ({ reciter, currentIndex, setLoading,setError }) => {
                 const data = await clonedResponse.json();
                 const surahData = data.chapters;
                 setSurahs(surahData);
-                // setCurrentSurah(surahData[0]);
                 setCurrentSurah(
-                    currentIndex == 1
+                    currentIndex === 1
                         ? surahData[0]
                         : surahData[currentIndex - 1]
                 );

@@ -1,7 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import * as React from "react";
 
-
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faQuran } from "@fortawesome/free-solid-svg-icons";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
@@ -24,7 +23,6 @@ function Navigation({ surahs }) {
                     borderTopColor: "gray",
                     borderTopWidth: 1,
                     paddingTop: 20,
-                  
                 },
             }}
         >
@@ -38,7 +36,11 @@ function Navigation({ surahs }) {
                         marginTop: 15,
                     },
                     tabBarIcon: ({ color, size }) => (
-                        <FontAwesomeIcon icon={faHome} color={color} size={size} />
+                        <FontAwesomeIcon
+                            icon={faHome}
+                            color={color}
+                            size={size}
+                        />
                     ),
                 }}
             />
@@ -57,7 +59,7 @@ function Navigation({ surahs }) {
                         />
                     ),
                 }}
-                children={() => <Library surahs={surahs} />}
+                children={() => <Library />}
             />
             <Tab.Screen
                 name="Settings"
