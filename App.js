@@ -24,7 +24,7 @@ export default function App() {
                     <Text style={styles.text}>asdsadsa</Text>
                 <Text>asdsadsa</Text> */}
                             <Nav />
-                            <Navigation/>
+                            <Navigation />
                         </View>
                     </NavigationContainer>
                 </AudioProvider>
