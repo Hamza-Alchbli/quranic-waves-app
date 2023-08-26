@@ -19,10 +19,6 @@ export default function App() {
                 <AudioProvider>
                     <NavigationContainer>
                         <View style={styles.container}>
-                            {/* 
-                    <Library surahs={surahs} libraryStatus={libraryStatus}/>
-                    <Text style={styles.text}>asdsadsa</Text>
-                <Text>asdsadsa</Text> */}
                             <Nav />
                             <Navigation />
                         </View>

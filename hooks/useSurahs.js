@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { useAudioContext } from "../context/AudioContext"; // Import the useAudioContext hook
+import useLoadingStatus from "./useLoadingStatus";
 
 export const useSurahs = () => {
-    const { reciter, currentIndex, setLoading, setError } = useAudioContext(); // Access the context values
+    const { reciter, currentIndex } = useAudioContext(); // Access the context values
+    
+    const {setError, setLoading} = useLoadingStatus();
 
     const [surahs, setSurahs] = useState(null);
     const [lang, setLang] = useState("en");

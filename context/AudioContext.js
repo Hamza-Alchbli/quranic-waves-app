@@ -1,4 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
+import useLoadingStatus from "../hooks/useLoadingStatus";
+import { useSurahs } from "../hooks/useSurahs";
 
 const AudioContext = createContext();
 
@@ -10,6 +12,9 @@ export const AudioProvider = ({ children }) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [shuffle, setShuffle] = useState(false);
     const [randomSurah, setRandomSurah] = useState(null);
+
+
+   
 
     const contextValue = {
         reciter,

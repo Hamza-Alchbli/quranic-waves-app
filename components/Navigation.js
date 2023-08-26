@@ -14,7 +14,7 @@ const Tab = createBottomTabNavigator();
 function Navigation({ surahs }) {
     return (
         <Tab.Navigator
-            initialRouteName="Library"
+            initialRouteName="Home"
             screenOptions={{
                 headerShown: false,
                 tabBarStyle: {

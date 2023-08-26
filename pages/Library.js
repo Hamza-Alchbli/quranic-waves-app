@@ -22,27 +22,31 @@ function Library() {
                         onChangeText={(text) => handleSearch(text)}
                         value={searchTerm}
                         placeholder="Search..."
-                        keyboardType="text"
                     />
-                    {surahs.map((surah, index) => {
-                        const searchTermLower = searchTerm.toLowerCase();
-                        const surahNameLower = surah.name_simple.toLowerCase();
+                    {surahs
+                        ? surahs.map((surah, index) => {
+                              const searchTermLower = searchTerm.toLowerCase();
+                              const surahNameLower =
+                                  surah.name_simple.toLowerCase();
 
-                        if (
-                            surahNameLower.includes(searchTermLower) ||
-                            surah.translated_name.name.includes(searchTerm) ||
-                            surah.name_arabic.includes(searchTerm) ||
-                            surah.name_simple.includes(searchTerm)
-                        ) {
-                            return (
-                                <LibrarySurah
-                                    key={index}
-                                    index={index}
-                                    surah={surah}
-                                />
-                            );
-                        }
-                    })}
+                              if (
+                                  surahNameLower.includes(searchTermLower) ||
+                                  surah.translated_name.name.includes(
+                                      searchTerm
+                                  ) ||
+                                  surah.name_arabic.includes(searchTerm) ||
+                                  surah.name_simple.includes(searchTerm)
+                              ) {
+                                  return (
+                                      <LibrarySurah
+                                          key={index}
+                                          index={index}
+                                          surah={surah}
+                                      />
+                                  );
+                              }
+                          })
+                        : ""}
                 </ScrollView>
             </View>
         </View>
